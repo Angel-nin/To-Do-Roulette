@@ -1,0 +1,49 @@
+Title: Task Roulette
+Problem Statement: 
+Many people struggle with tasks piling up to the point where you just don’t know which ones to do first. On the other hand, some people might just struggle with deciding which chore or school work to do first.
+Project Objectives:
+The objective of this project is to make a to-do shuffler that helps users to complete their tasks successfully by using randomness into task management. This project aims to allow users to input their tasks and shuffle them to help the user decide which ones to do first. Overall, this project aims to improve task completion rates, reduce stress in deciding in a fun and stress-free way.
+Planned Features:
+Our project plans to include features such as a task manager to add and delete the users’ tasks. A shuffler/roulette mode to randomly arrange the tasks added. A tasks organizer to organize the type of task (work, school home etc.). And finally, the progress tracker (weekly) to track the tasks due per week.
+Planned Inputs and Outputs:
+So, the system will ask the user to enter a task together with the due date of that task and will then ask on which category the tasks belong to and will be given the option to create another category. Then once you open a category you are met with a button that says “Let’s Play” and will show a screen with a Russian roulette and will stop after some time on a task. After that there will be a button on the home screen saying “Progress” and there the user will be met with the tasks due that week and will be colored in green if the tasks is already done.
+Logic Plan:
+	Start
+	Task list
+	Category List
+	Progress Tracker
+
+	
+Display “1.  Categories
+	2. Progress Report
+	3. Exit
+	Enter choice (number) :”
+Input choice
+If choice = ‘1’ Then
+	Display Category List, “1. Add another task
+	                                         2. Let’s Play”
+	Input choice
+	If Choice = ‘1’ Then
+		Input task, date
+		Add task, date to progress tracker  
+		Add to task and date to task list 
+		Display “Which catergory? (Input N if you want to make a new category) ”, Category list
+		Input N
+		If choice = ‘N’ Then
+			Input category,
+Add task, date to category
+			Add to category list
+		Else 
+			Add task and date to category
+		End IF
+	Else If Choice = ‘2’ Then
+		Randomly select a task
+		Color task green
+		Add to progress tracker
+	End If
+Else If choice = ‘ 2’ Then
+	Display Progress tracker
+Else 
+	Display “ Thanks!”
+End If
+Stop
