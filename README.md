@@ -11,10 +11,8 @@
 
 ## How to Run the Program
 1. Open the Prpoect File
-2. Download the file `grade_calculator.py`.
-3. Open a terminal or command prompt.
-4. Run the program by pressing F5 or clicking 'Run' 
-5. Follow the on-screen instructions to enter task names and dates
+2. Run the program by pressing F5 or clicking 'Run' 
+3. Follow the on-screen instructions to enter task names and dates
 
 ##Example Output
 1. Categories
