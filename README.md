@@ -22,8 +22,12 @@ Enter Number: 1
 
 School work:                    House chores:
 -Soc sci Research paper Sept. 5         - Sweep the kitchen    Sept. 3
--Physcics LQ            Sept. 10        - Wash the dishes      Sept. 3
+                                        - Wash the dishes      Sept. 3
 
+Do you want to add a new task: Yes
+ Enter task: Physcs LQ
+ Enter Due date: Sept. 10
+ 
 Shuffle: Sweep the kitchen
 
 Want to shuffle again? : No
