@@ -10,7 +10,7 @@
   - Marks the task green when done
 
 ## How to Run the Program
-1. Open the Prpoect File
+1. Open the Project File
 2. Run the program by pressing F5 or clicking 'Run' 
 3. Follow the on-screen instructions to enter task names and dates
 
@@ -20,7 +20,7 @@
 3. Exit
 Enter Number: 1
 
-School work:                    House chores:
+School work:                             House chores:
 -Soc sci Research paper Sept. 5         - Sweep the kitchen    Sept. 3
                                         - Wash the dishes      Sept. 3
 
