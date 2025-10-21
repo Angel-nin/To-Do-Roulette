@@ -19,35 +19,34 @@ So, the system will ask the user to enter a task together with the due date of t
 
 	
 Display “1.  Categories
-	2. Progress Report
-	3. Exit
-	Enter choice (number) :”
+         2.  Progress Report
+         3.  Exit
+	     Enter choice (number) :”
 Input choice
 If choice = ‘1’ Then
 	Display Category List, “1. Add another task
-	                                         2. Let’s Play”
+	                        2. Let’s Play”
 	Input choice
 	If Choice = ‘1’ Then
 		Input task, date
-		Add task, date to progress tracker  
-		Add to task and date to task list 
+		Add to progress tracker
 		Display “Which catergory? (Input N if you want to make a new category) ”, Category list
 		Input N
 		If choice = ‘N’ Then
 			Input category,
-Add task, date to category
+            Add task, date to category
 			Add to category list
 		Else 
 			Add task and date to category
-		End IF
+
 	Else If Choice = ‘2’ Then
 		Randomly select a task
 		Color task green
 		Add to progress tracker
-	End If
+
 Else If choice = ‘ 2’ Then
 	Display Progress tracker
-Else 
+Else if choice = '3' then
 	Display “ Thanks!”
-End If
+
 Stop
