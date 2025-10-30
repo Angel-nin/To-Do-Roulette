@@ -13,7 +13,7 @@ Many people struggle with tasks piling up to the point where they just don’t k
 ## Features
   - Enter task name
   - Enter due date/time of the task
-  - Oraganizes the tasks under a specific category
+  - Oraganizes the tasks under a specific category (maximum of 5 categories)
   - Shuffles the tasks
   - Marks the task green when done
 
