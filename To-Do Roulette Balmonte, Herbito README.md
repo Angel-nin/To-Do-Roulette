@@ -22,7 +22,7 @@ Many people struggle with tasks piling up to the point where they just don’t k
 2. Run the program by pressing F5 or clicking 'Run' 
 3. Follow the on-screen instructions to enter task names and dates
 
-## Exampple Output
+## Example Output
 ---------------------------------------------------------------------------
 1. Categories
 2. Progress
