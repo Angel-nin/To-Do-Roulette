@@ -29,94 +29,176 @@ Many people struggle with tasks piling up to the point where they just don’t k
 3. Exit
 Enter Number: 1
 --------------------------------------------------------------------------
-School work                              House chores
--Soc sci Research paper Sept. 5         - Sweep the kitchen   1 pm
-                                        - Wash the dishes     12:30pm
+1. School work
+2. House chores
+3. Exit
+Enter Category Number: 2
+
+--------------------------------------------------------------------------
+ House chores:
+1. Sweep the kitchen   1pm
+2. Wash the dishes     12:30pm
                                         
----------------------------------------------------------------------------
-Do you want to add a new task: Yes
- Enter task: Study Physcs LQ
- Enter Due date/time: Sept. 10
- 
----------------------------------------------------------------------------
+-------------------------------------------------------------------------
+1. Add a new task
+2. Shuffle
+3. Exit
+Enter Choice: 2
+
+--------------------------------------------------------------------------
 Shuffle: Sweep the kitchen
 
 --------------------------------------------------------------------------
-Want to shuffle again? : No
+House chores:
+1. Wash the dishes     12:30pm
+--------------------------------------------------------------------------                                 
 
--------------------------------------------------------------------------
-1. Categories
-2. Progress
+1. Add a new task
+2. Shuffle
 3. Exit
-Enter number: 2
+Enter Choice: 3
+---------------------------------------------------------------------------
+1. School work
+2. House chores
+3. Exit
+Enter Category Number: 1
+---------------------------------------------------------------------------
+School work:                             
+1. Soc sci Research paper Sept. 5 
+---------------------------------------------------------------------------
+1. Add a new task
+2. Shuffle
+3. Exit
+Enter Choice: 1
+---------------------------------------------------------------------------
+Enter task: Study Physcs LQ
+Enter Due date/time: Sept. 10
+
 --------------------------------------------------------------------------
-School work                                House chores
-                                            - Sweep the kitchen    1pm   DONE
-         
----------------------------------------------------------------------------
-1. Categories
-2. Progress
+School work:                                
+1. Soc sci Research paper Sept. 5             
+2. Study Physcics LQ      Sept. 10  
+--------------------------------------------------------------------------
+1. Add a new task
+2. Shuffle
 3. Exit
-Enter Number: 3
----------------------------------------------------------------------------
-Some chores are still waiting for you.
-
----------------------------------------------------------------------------
-1. Categories
-2. Progress
-3. Exit
-Enter Number: 1
----------------------------------------------------------------------------
-School work                                House chores
--Soc sci Research paper Sept. 5             - Wash the dishes      12:30pm
--Study Physcics LQ      Sept. 10  
-
----------------------------------------------------------------------------
-Do you want to add a new task: No
-
----------------------------------------------------------------------------
+Enter Choice: 2
+-------------------------------------------------------------------------
 Shuffle: Study Physcics LQ
 
-----------------------------------------------------------------------------
-Want to shuffle again? : Yes
+------------------------------------------------------------------------
+School work:                                
+1. Soc sci Research paper Sept. 5             
+-------------------------------------------------------------------------
 
-----------------------------------------------------------------------------
-Shuffle: Soc sci Research paper
-
-----------------------------------------------------------------------------
-Want to shuffle again? : Yes
-
-----------------------------------------------------------------------------
-Shuffle: Wash the dishes
-
-----------------------------------------------------------------------------
-Want to shuffle again? : Yes
-
-----------------------------------------------------------------------------
-Invalid! All chores completed.
-
-----------------------------------------------------------------------------
+1. Add a new task
+2. Shuffle
+3. Exit
+Enter Choice: 3
+------------------------------------------------------------------------
+1. School work
+2. House chores
+3. Exit
+Enter Category Number: 3
+------------------------------------------------------------------------
 1. Categories
 2. Progress
 3. Exit
 Enter Number: 2
-
------------------------------------------------------------------------------
-School work                                    House chores
--Soc sci Research paper Sept. 5   Done        - Sweep the kitchen   1 pm     Done
--Study Physcics LQ      Sept. 10  Done        - Wash the dishes     12:30pm  Done
-
-------------------------------------------------------------------------------
+------------------------------------------------------------------------
+School work:                                House chores:
+- Study Physcics LQ   Done                 - Sweep the kitchen       DONE
+------------------------------------------------------------------------
 1. Categories
 2. Progress
 3. Exit
 Enter Number: 3
-------------------------------------------------------------------------------
-"Everything’s checked off your list well done!"
+------------------------------------------------------------------------
+Some chores are still waiting for you.
 
-------------------------------------------------------------------------------
+------------------------------------------------------------------------
+1. Categories
+2. Progress
+3. Exit
+Enter Number: 1
+------------------------------------------------------------------------
+1. School work
+2. House chores
+3. Exit
+Enter Category Number: 1
+------------------------------------------------------------------------
+School work:                                
+1. Soc sci Research paper Sept. 5
+------------------------------------------------------------------------
+1. Add a new task
+2. Shuffle
+3. Exit
+Enter Choice: 2
+-----------------------------------------------------------------------
+Shuffle: Soc sci Research paper
+
+-----------------------------------------------------------------------
+School work:
+
+-----------------------------------------------------------------------
+1. Add a new task
+2. Shuffle
+3. Exit
+Enter Choice: 3
+----------------------------------------------------------------------
+1. School work
+2. House chores
+3. Exit
+Enter Category Number: 2
+---------------------------------------------------------------------
+House chores:  
+1. Wash the dishes     12:30pm
+---------------------------------------------------------------------
+1. Add a new task
+2. Shuffle
+3. Exit
+Enter Choice: 2
+---------------------------------------------------------------------
+Shuffle: Wash the dishes
+
+---------------------------------------------------------------------
+House chores:  
+
+---------------------------------------------------------------------
+1. Add a new task
+2. Shuffle
+3. Exit
+Enter Choice: 3
+---------------------------------------------------------------------
+1. School work
+2. House chores
+3. Exit
+Enter Category Number: 3
+---------------------------------------------------------------------
+1. Categories
+2. Progress
+3. Exit
+Enter Number: 2
+---------------------------------------------------------------------
+School work                                      House chores:
+-Soc sci Research paper Sept. 5   Done          - Sweep the kitchen 1pm     Done
+-Study Physcics LQ      Sept. 10  Done          - Wash the dishes   12:30pm Done
+
+---------------------------------------------------------------------
+1. Categories
+2. Progress
+3. Exit
+Enter Number: 3
+--------------------------------------------------------------------
+Everything’s checked off your list well done!
+
+--------------------------------------------------------------------
 
 
 ## Contributors
 - Student 1: Xyina Rizaan G. Herbito (Did the Features part and Thoughtb of the title)
 - Student 2: Angel N. Balmonte (Did the How to run the program and project description parts)
+
+
+
+
