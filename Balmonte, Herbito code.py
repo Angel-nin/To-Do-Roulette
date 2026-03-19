@@ -1,0 +1,201 @@
+import random   #lets me use random.choice()
+
+
+
+categories = {
+    1: {"name": "School Work", "tasks": []},
+    2: {"name": "House Chores", "tasks": []},
+    3: {"name": "Self-care", "tasks": []},
+    4: {"name": "Errands", "tasks": []},
+    5: {"name": "Bucket List", "tasks": []}
+            }
+
+
+
+
+def tasks_done():   #checks if all tasks are done
+
+    for data in categories.values():        #checks all cat
+        for name, done in data["tasks"]:    #checks tasks
+            any_task_exists = True  #if this runs then there is a task
+            if not done:    #if the task is not done return false
+                return False
+                
+    # exits if there is no task at all
+    if not any_task_exists:
+        return True
+
+    return True
+
+
+
+
+
+
+def show_main_menu():   #displays the main menu
+    print("\n" + "="*40)    #displays a kind of divider to make the program cleaner 
+    print("MAIN MENU")
+    print("1. Categories")
+    print("2. Progress (done only)")
+    print("3. Exit")
+
+
+
+
+
+def show_categories():  #displays th categories
+    print("\n" + "="*40)    
+    print("CATEGORIES")
+    for num, data in categories.items():    
+        print(f"{num}. {data['name']}")     #ex. 1.school work
+    print("6. Back")
+
+
+
+
+
+
+
+def show_tasks(cat_num):    
+    tasks = categories[cat_num]["tasks"]
+    print("\nCurrent tasks in", categories[cat_num]["name"])
+
+    if not tasks:
+        print("(no tasks yet)")
+        return
+
+    for i, (name, done) in enumerate(tasks, 1):     #1. taskname  2. taskname
+        status = "/ Done" if done else "x Pending"
+        print(f"{i}. {name} — {status}")
+
+
+
+
+
+
+
+
+
+def category_menu(cat_num):
+    while True:
+        print("\n" + "-"*40)
+        print(categories[cat_num]["name"])      #displays category name        
+        print("1. Add task")
+        print("2. Pick random task")
+        print("3. Mark task done")
+        print("4. Show tasks")
+        print("5. Exit category")
+
+        choice = input("Enter choice: ")
+
+        if choice == "1":
+            name = input("Enter task: ").strip()    #.strip is just there to remove any extra spaces 
+            if name:    #just checks if there was a task entered
+                categories[cat_num]["tasks"].append([name, False])
+                print("Task added.")
+                show_tasks(cat_num)     #displays all the tasks inside the category
+            else:
+                print("Task cannot be empty.")
+
+        elif choice == "2":
+            tasks = categories[cat_num]["tasks"]
+            if tasks:   #checks  if there are any tasks  
+                name, done = random.choice(tasks)   #selects a random task
+                print("Random task selected:", name)
+            else:
+                print("No tasks available.")
+
+        elif choice == "3":
+            tasks = categories[cat_num]["tasks"]
+            if not tasks:   #if there aree no tasks 
+                print("No tasks to mark.")
+                continue
+
+            show_tasks(cat_num)
+            num_input = input("Task number to mark done: ") #num of task to be marked  done
+
+            if num_input.isdigit(): #checks if the input is a num
+                num = int(num_input)
+                if 1 <= num <= len(tasks):  #checks if the inputed number is within  the range of the tasks
+                    tasks[num-1][1] = True  #this is for the index so if user picked 1 the index oof th task wouldd be 0 so this statement is needed
+                    print("Marked as done.")
+                    show_tasks(cat_num)
+                else:
+                    print("Invalid number: out of range.")
+            else:
+                print("Invalid input: not a number.")
+
+
+        elif choice == "4":
+            show_tasks(cat_num)
+
+        elif choice == "5":
+            break
+
+        else:
+            print("Invalid choice.")
+
+
+
+
+
+
+
+
+def show_progress():
+    print("\n" + "="*40)
+    print("DONE TASKS")
+
+    found = False   #this is false there are no done tasks this will be changed later on 
+
+    for data in categories.values():    #goes through every categories
+        done_tasks = []
+        for task in data["tasks"]:
+            if task[1]:         # if task is done
+                done_tasks.append(task[0])
+
+        if done_tasks:
+            any_done = True
+            print("\n" + data["name"] + ":")
+            for task_name in done_tasks:    #goes through all done tasks
+                print("/", task_name)   #prints each tasks
+
+    if not any_done:
+        print("No completed tasks yet.")
+
+
+
+
+while True:
+    show_main_menu()
+    choice = input("Enter choice: ")
+
+    if choice == "1":
+        show_categories()
+        c_input = input("Enter category number: ")
+
+    
+        if c_input.isdigit():   # check if the input is a num
+            c = int(c_input)    #converts c_input into c which is it    
+
+        if c == 6:
+            continue
+        elif c in categories:
+            category_menu(c)    #calls function but for cat c only 
+        else:
+            print("Invalid category.")
+    
+
+    elif choice == "2":
+        show_progress()
+
+    elif choice == "3":
+        if tasks_done():
+            print("All tasks complete. Goodbye!")
+            break
+        else:
+            print("\nYou cannot exit yet — some tasks are still pending.")
+            print("Finish them first!")
+
+    else:
+        print("Invalid choice.")
