@@ -8,14 +8,14 @@ Many people struggle with tasks piling up to the point where they just don’t k
   This project aims to help indecisive people to decide on which chore/schoolwork they should do first
 
 ## Project Objectives
-  The objective of this project is to make a to-do shuffler that helps users to complete their tasks successfully by using randomness into task management. This project aims to allow users to input their tasks and shuffle them to help the user decide which ones to do first. Overall, this project aims to improve task completion rates, reduce stress in deciding in a fun and stress-free way.
+  This project aims to help indecisive users make decisions by allowing them to set deadlines and track their progress. It encourages users to finish tasks slowly but surely so their work does not pile up. Overall, the project seeks to improve task completion, reduce the stress of decision-making, and make prioritizing tasks more fun and effortless.
 
 ## Features
   - Enter task name
   - Enter due date of the task
   - Oraganizes the tasks under a specific category (maximum of 5 categories)
   - Shuffles the tasks
-  - Marks the task green when done
+  - Marks the task green when done and red if overdue
   - Organizes the tasks in a calendar
 
 ## How to Run the Program
