@@ -12,10 +12,11 @@ Many people struggle with tasks piling up to the point where they just don’t k
 
 ## Features
   - Enter task name
-  - Enter due date/time of the task
+  - Enter due date of the task
   - Oraganizes the tasks under a specific category (maximum of 5 categories)
   - Shuffles the tasks
   - Marks the task green when done
+  - Organizes the tasks in a calendar
 
 ## How to Run the Program
 1. Open the Project File
@@ -36,8 +37,8 @@ Enter Category Number: 2
 
 --------------------------------------------------------------------------
  House chores:
-1. Sweep the kitchen   1pm
-2. Wash the dishes     12:30pm
+1. Sweep the kitchen   2026-07-07
+2. Wash the dishes     2026-07-07
                                         
 -------------------------------------------------------------------------
 1. Add a new task
@@ -50,7 +51,7 @@ Shuffle: Sweep the kitchen
 
 --------------------------------------------------------------------------
 House chores:
-1. Wash the dishes     12:30pm
+1. Wash the dishes     2026-07-07
 --------------------------------------------------------------------------                                 
 
 1. Add a new task
