@@ -26,8 +26,9 @@ Many people struggle with tasks piling up to the point where they just don’t k
 ## Example Output
 ---------------------------------------------------------------------------
 1. Categories
-2. Progress
-3. Exit
+2. Calendar
+3. Progress
+4. Exit
 Enter Number: 1
 --------------------------------------------------------------------------
 1. School work
