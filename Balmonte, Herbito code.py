@@ -1,6 +1,7 @@
-import random   #lets me use random.choice()
+import random
+from datetime import datetime
 
-
+# [task_name, done_status, deadline]
 
 categories = {
     1: {"name": "School Work", "tasks": []},
@@ -8,78 +9,63 @@ categories = {
     3: {"name": "Self-care", "tasks": []},
     4: {"name": "Errands", "tasks": []},
     5: {"name": "Bucket List", "tasks": []}
-            }
+}
+
+# dates 
+
+def get_today():        #Get the date today
+    return datetime.today().date()  #.today (get the date today w time);    .date (gets rid of thee time)
 
 
+def get_status(deadline, done):      #get the status (if pending, done or overdue)
+    today = get_today()
+
+    if done:
+        return "Done"
+
+    if deadline < today:
+        days = (today - deadline).days
+        return f" Overdue by {days} day(s)"
+    else:
+        return " Pending"
 
 
-def tasks_done():   #checks if all tasks are done
+#  DISPLAY 
 
-    for data in categories.values():        #checks all cat
-        for name, done in data["tasks"]:    #checks tasks
-            any_task_exists = True  #if this runs then there is a task
-            if not done:    #if the task is not done return false
-                return False
-                
-    # exits if there is no task at all
-    if not any_task_exists:
-        return True
-
-    return True
-
-
-
-
-
-
-def show_main_menu():   #displays the main menu
-    print("\n" + "="*40)    #displays a kind of divider to make the program cleaner 
-    print("MAIN MENU")
+def show_main_menu():     
+    print("\n" + "="*40)      #display 40 "="
+    print("TO-DO ROULETTE")
     print("1. Categories")
-    print("2. Progress (done only)")
+    print("2. Progress")
     print("3. Exit")
 
 
-
-
-
-def show_categories():  #displays th categories
-    print("\n" + "="*40)    
+def show_categories():
+    print("\n" + "="*40)
     print("CATEGORIES")
-    for num, data in categories.items():    
-        print(f"{num}. {data['name']}")     #ex. 1.school work
-    print("6. Back")
+    for num, data in categories.items():    #checks the content if the dictionary categories
+        print(f"{num}. {data['name']}")     #displays the Categories w numbers
 
 
-
-
-
-
-
-def show_tasks(cat_num):    
-    tasks = categories[cat_num]["tasks"]
-    print("\nCurrent tasks in", categories[cat_num]["name"])
+def show_tasks(cat_num):    #cat_num = category number    
+    tasks = categories[cat_num]["tasks"]    #checks the list of tasks inside a category
+    print("\nTasks in", categories[cat_num]["name"])    #displays tasks inside a category (cat_num = catgory )
 
     if not tasks:
         print("(no tasks yet)")
         return
 
-    for i, (name, done) in enumerate(tasks, 1):     #1. taskname  2. taskname
-        status = "/ Done" if done else "x Pending"
-        print(f"{i}. {name} — {status}")
+    for i, (name, done, deadline) in enumerate(tasks, 1):   #enumerate coounts the items starting at 1
+        status = get_status(deadline, done)     #gets the status of the current task being checked
+        print (f"{i}. {name} | Due: {deadline} | {status}")   #prints th task w the u know u know
 
 
-
-
-
-
-
-
+# CATEGORY MENU 
 
 def category_menu(cat_num):
     while True:
         print("\n" + "-"*40)
-        print(categories[cat_num]["name"])      #displays category name        
+        print(categories[cat_num]["name"])  #display catgeory name
         print("1. Add task")
         print("2. Pick random task")
         print("3. Mark task done")
@@ -88,44 +74,46 @@ def category_menu(cat_num):
 
         choice = input("Enter choice: ")
 
-        if choice == "1":
-            name = input("Enter task: ").strip()    #.strip is just there to remove any extra spaces 
-            if name:    #just checks if there was a task entered
-                categories[cat_num]["tasks"].append([name, False])
+        
+        if choice == "1":   # ADD TASK
+            name = input("Enter task: ").strip()    #.strip cleaning accidental spaces
+            date_str = input("Enter deadline (YYYY-MM-DD): ").strip()
+
+            try:    #tries this part of the code
+                deadline = datetime.strptime(date_str, "%Y-%m-%d").date()   #converts the date to real date (.strptime reads str as date)
+                categories[cat_num]["tasks"].append([name, False, deadline])    #adds the task to the category
                 print("Task added.")
-                show_tasks(cat_num)     #displays all the tasks inside the category
-            else:
-                print("Task cannot be empty.")
+            except: #if smth happens in the try section it will jump here
+                print("Invalid date format.")
 
+        # RANDOM TASK (ONLY NOT DONE)
         elif choice == "2":
-            tasks = categories[cat_num]["tasks"]
-            if tasks:   #checks  if there are any tasks  
-                name, done = random.choice(tasks)   #selects a random task
-                print("Random task selected:", name)
-            else:
-                print("No tasks available.")
+            tasks = [t for t in categories[cat_num]["tasks"] if not t[1]]   #filters unfinished tasks
 
+            if tasks:
+                name, done, deadline = random.choice(tasks) #picks a random task
+                print(f"  You got: {name} (Due: {deadline})")
+            else:
+                print("No pending tasks available.")
+
+        # MARK DONE
         elif choice == "3":
             tasks = categories[cat_num]["tasks"]
-            if not tasks:   #if there aree no tasks 
-                print("No tasks to mark.")
+
+            if not tasks:   #if no tasks
+                print("No tasks.")
                 continue
 
             show_tasks(cat_num)
-            num_input = input("Task number to mark done: ") #num of task to be marked  done
 
-            if num_input.isdigit(): #checks if the input is a num
-                num = int(num_input)
-                if 1 <= num <= len(tasks):  #checks if the inputed number is within  the range of the tasks
-                    tasks[num-1][1] = True  #this is for the index so if user picked 1 the index oof th task wouldd be 0 so this statement is needed
-                    print("Marked as done.")
-                    show_tasks(cat_num)
-                else:
-                    print("Invalid number: out of range.")
-            else:
-                print("Invalid input: not a number.")
+            try:
+                num = int(input("Task number: "))
+                tasks[num-1][1] = True  #changes from false to true so then it will print 
+                print("Marked as done.")
+            except:
+                print("Invalid input.")
 
-
+        # SHOW TASKS
         elif choice == "4":
             show_tasks(cat_num)
 
@@ -136,35 +124,28 @@ def category_menu(cat_num):
             print("Invalid choice.")
 
 
-
-
-
-
-
+#  PROGRESS 
 
 def show_progress():
     print("\n" + "="*40)
-    print("DONE TASKS")
+    print("COMPLETED TASKS")
 
-    found = False   #this is false there are no done tasks this will be changed later on 
+    found = False
 
-    for data in categories.values():    #goes through every categories
-        done_tasks = []
-        for task in data["tasks"]:
-            if task[1]:         # if task is done
-                done_tasks.append(task[0])
+    for data in categories.values():    #checks all catgories
+        done_tasks = [t for t in data["tasks"] if t[1]] #filters completed tasks only and adds it to done_task
 
         if done_tasks:
-            any_done = True
+            found = True    
             print("\n" + data["name"] + ":")
-            for task_name in done_tasks:    #goes through all done tasks
-                print("/", task_name)   #prints each tasks
+            for name, done, deadline in done_tasks:
+                print(f" {name} (Due: {deadline})")
 
-    if not any_done:
+    if not found:
         print("No completed tasks yet.")
 
 
-
+#  MAIN LOOP 
 
 while True:
     show_main_menu()
@@ -172,30 +153,23 @@ while True:
 
     if choice == "1":
         show_categories()
-        c_input = input("Enter category number: ")
-
-    
-        if c_input.isdigit():   # check if the input is a num
-            c = int(c_input)    #converts c_input into c which is it    
-
-        if c == 6:
-            continue
-        elif c in categories:
-            category_menu(c)    #calls function but for cat c only 
-        else:
-            print("Invalid category.")
-    
+        try:
+            c = int(input("Enter category number: "))
+            if c == 6:  #back
+                continue
+            if c in categories: #opens the category w the number (c)
+                category_menu(c)
+            else:
+                print("Invalid category.")
+        except:
+            print("Enter a number.")
 
     elif choice == "2":
         show_progress()
 
     elif choice == "3":
-        if tasks_done():
-            print("All tasks complete. Goodbye!")
-            break
-        else:
-            print("\nYou cannot exit yet — some tasks are still pending.")
-            print("Finish them first!")
+        print("Goodbye!")
+        break
 
     else:
         print("Invalid choice.")
